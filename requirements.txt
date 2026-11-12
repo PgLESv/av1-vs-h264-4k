@@ -1,0 +1,7 @@
+# Python 3.10 ou superior
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+openpyxl>=3.1.0
+psutil>=5.9.0
+rich>=13.0.0

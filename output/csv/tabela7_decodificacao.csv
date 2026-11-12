@@ -1,0 +1,5 @@
+Decodificador,FPS_Medio,Tempo_Decodificacao_s,RTF_Tempo_Real,CPU_Util_pct,GPU_Util_pct
+H.264 SW (libavcodec),853.7,3.51,17.07,70.1,0.0
+H.264 HW (NVDEC),277.0,10.83,5.54,2.5,96.8
+AV1 SW (dav1d),1094.9,2.74,21.90,31.9,3.0
+AV1 HW (NVDEC),732.0,4.10,14.64,2.6,88.9

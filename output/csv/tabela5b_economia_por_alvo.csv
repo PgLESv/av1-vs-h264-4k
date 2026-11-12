@@ -1,0 +1,11 @@
+Alvo,Codificador,Bitrate médio em iso-qualidade (Mbps),Variação vs. base (banda e armazenamento),Amostras na média
+VMAF 93,H.264 x264 medium (CPU),16.67,Base,7 (1 excl.)
+VMAF 93,H.264 x264 veryslow (CPU),14.20,-14.8 %,7 (1 excl.)
+VMAF 93,H.264 NVENC p7 (GPU),15.50,-7.0 %,7 (1 excl.)
+VMAF 93,AV1 SVT-AV1 P6 (CPU),8.50,-49.0 %,7 (1 excl.)
+VMAF 93,AV1 NVENC p7 (GPU),11.93,-28.4 %,7 (1 excl.)
+VMAF 95,H.264 x264 medium (CPU),24.83,Base,7 (1 excl.)
+VMAF 95,H.264 x264 veryslow (CPU),20.55,-17.2 %,7 (1 excl.)
+VMAF 95,H.264 NVENC p7 (GPU),22.36,-10.0 %,7 (1 excl.)
+VMAF 95,AV1 SVT-AV1 P6 (CPU),11.80,-52.5 %,7 (1 excl.)
+VMAF 95,AV1 NVENC p7 (GPU),18.61,-25.1 %,7 (1 excl.)

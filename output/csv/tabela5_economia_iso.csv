@@ -1,0 +1,6 @@
+Codificador,Bitrate_Iso_VMAF93_kbps,GB_por_Hora,Volume_Acervo_1000h_TB,Custo_Armazenamento_BRL_Mes,Economia_Armazenamento_pct,Custo_Egress_BRL_Mes,Economia_Egress_pct,Custo_Total_Mensal_BRL
+h264,16674.43,6.988,6.824,1397.63,0.00,22711.56,0.00,24109.20
+h264-veryslow,14200.01,5.951,5.812,1190.23,14.84,19341.25,14.84,20531.48
+h264-nvenc,15503.34,6.497,6.345,1299.48,7.02,21116.47,7.02,22415.94
+svt-av1,8503.82,3.564,3.480,712.78,49.00,11582.70,49.00,12295.49
+nvenc-av1,11933.97,5.001,4.884,1000.29,28.43,16254.78,28.43,17255.07

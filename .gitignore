@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Sequências de vídeo sem compressão (dezenas de GB): baixar das fontes originais
+samples/*
+!samples/.gitkeep
+
+# Vídeos codificados (cerca de 19 GB): gerados pelo run_pipeline.py
+output/encoded/*
+!output/encoded/.gitkeep
+output/recortes/_tmp/
+
+# Ferramentas de terceiros: baixar conforme o README
+tools/
+
+# Saída do teste rápido de validação
+output_quick/
+
+# Sistema e editores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

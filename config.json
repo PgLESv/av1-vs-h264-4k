@@ -1,0 +1,282 @@
+{
+  "samples": [
+    {
+      "name": "Amostra 1 (CityAlley)",
+      "filename": "amostra1_cityalley.y4m",
+      "origem": "UVG Dataset: CityAlley 3840x2160, 50 fps, 600 frames (12 s), 8-bit 4:2:0 YUV",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ]
+    },
+    {
+      "name": "Amostra 2 (FlowerFocus)",
+      "filename": "amostra2_flowerfocus.y4m",
+      "origem": "UVG Dataset: FlowerFocus 3840x2160, 50 fps, 600 frames (12 s), 8-bit 4:2:0 YUV",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ]
+    },
+    {
+      "name": "Amostra 3 (FlowerKids)",
+      "filename": "amostra3_flowerkids.y4m",
+      "origem": "UVG Dataset: FlowerKids 3840x2160, 50 fps, 600 frames (12 s), 8-bit 4:2:0 YUV",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ]
+    },
+    {
+      "name": "Amostra 4 (FlowerPan)",
+      "filename": "amostra4_flowerpan.y4m",
+      "origem": "UVG Dataset: FlowerPan 3840x2160, 50 fps, 600 frames (12 s), 8-bit 4:2:0 YUV",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ]
+    },
+    {
+      "name": "Amostra 5 (RaceNight)",
+      "filename": "amostra5_racenight.y4m",
+      "origem": "UVG Dataset: RaceNight 3840x2160, 50 fps, 600 frames (12 s), 8-bit 4:2:0 YUV",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ],
+      "grain_test": true,
+      "nota_grao": "Maior ruído estimado (Immerkær, σ≈3,5 vs. ~2,1 das demais)"
+    },
+    {
+      "name": "Amostra 6 (RiverBank)",
+      "filename": "amostra6_riverbank.y4m",
+      "origem": "UVG Dataset: RiverBank 3840x2160, 50 fps, 600 frames (12 s), 8-bit 4:2:0 YUV",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ]
+    },
+    {
+      "name": "Amostra 7 (Twilight)",
+      "filename": "amostra7_twilight.y4m",
+      "origem": "UVG Dataset: Twilight 3840x2160, 50 fps, 600 frames (12 s), 8-bit 4:2:0 YUV",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ]
+    },
+    {
+      "name": "Amostra 8 (CrowdRun)",
+      "filename": "amostra8_crowdrun.y4m",
+      "origem": "Xiph.org derf / SVT: crowd_run 3840x2160, 50 fps, 500 frames (10 s), 8-bit 4:2:0",
+      "bitrates_kbps": [
+        4000,
+        8000,
+        12000,
+        16000,
+        24000
+      ]
+    }
+  ],
+  "encoding": {
+    "bit_depth": 8,
+    "gop_seconds": 2.0,
+    "repetitions": 3,
+    "vbr_maxrate_factor": 1.5,
+    "vbr_bufsize_factor": 2.0
+  },
+  "codecs": {
+    "h264": {
+      "label": "H.264 x264 medium (CPU)",
+      "lib": "libx264",
+      "family": "h264",
+      "device": "cpu",
+      "preset": "medium",
+      "rd_points": [
+        14,
+        18,
+        22,
+        26,
+        30,
+        34
+      ],
+      "extra_args": []
+    },
+    "h264-veryslow": {
+      "label": "H.264 x264 veryslow (CPU)",
+      "lib": "libx264",
+      "family": "h264",
+      "device": "cpu",
+      "preset": "veryslow",
+      "rd_points": [
+        14,
+        18,
+        22,
+        26,
+        30,
+        34
+      ],
+      "extra_args": []
+    },
+    "h264-nvenc": {
+      "label": "H.264 NVENC p7 (GPU)",
+      "lib": "h264_nvenc",
+      "family": "h264",
+      "device": "gpu",
+      "preset": "p7",
+      "rd_points": [
+        18,
+        22,
+        26,
+        30,
+        34,
+        38
+      ],
+      "extra_args": []
+    },
+    "svt-av1": {
+      "label": "AV1 SVT-AV1 P6 (CPU)",
+      "lib": "libsvtav1",
+      "family": "av1",
+      "device": "cpu",
+      "preset": "6",
+      "rd_points": [
+        28,
+        35,
+        42,
+        49,
+        56,
+        63
+      ],
+      "extra_args": []
+    },
+    "nvenc-av1": {
+      "label": "AV1 NVENC p7 (GPU)",
+      "lib": "av1_nvenc",
+      "family": "av1",
+      "device": "gpu",
+      "preset": "p7",
+      "rd_points": [
+        20,
+        26,
+        32,
+        38,
+        44,
+        50
+      ],
+      "extra_args": []
+    }
+  },
+  "baseline": "h264",
+  "comparisons": [
+    [
+      "svt-av1",
+      "h264"
+    ],
+    [
+      "nvenc-av1",
+      "h264"
+    ],
+    [
+      "svt-av1",
+      "h264-veryslow"
+    ],
+    [
+      "nvenc-av1",
+      "h264-nvenc"
+    ]
+  ],
+  "significance": {
+    "bd_rate_threshold_pct": -30.0,
+    "alpha": 0.05,
+    "nota": "H1: mediana do BD-Rate VMAF < limiar. Wilcoxon unilateral exato + Holm apenas entre as comparações principais (definidas a priori); demais comparações são exploratórias. Unidade amostral = sequência.",
+    "primary_comparisons": [
+      [
+        "svt-av1",
+        "h264"
+      ],
+      [
+        "nvenc-av1",
+        "h264-nvenc"
+      ]
+    ]
+  },
+  "iso_quality_targets_vmaf": [
+    93,
+    95
+  ],
+  "preset_test": {
+    "codec": "svt-av1",
+    "presets": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "sample": "Amostra 3 (FlowerKids)",
+    "nota": "Curva R-D completa (mesmos CRFs do SVT-AV1) por preset; P6 reutiliza a curva principal."
+  },
+  "grain_test": {
+    "film_grain_level": 8,
+    "film_grain_denoise": 1,
+    "crf": 35,
+    "nota": "CRF 35 pertence à grade do SVT-AV1: comparável com o mesmo ponto sem síntese de grão."
+  },
+  "crops": {
+    "width": 480,
+    "height": 270,
+    "upscale": 2
+  },
+  "energy": {
+    "cpu_tdp_watts": 120,
+    "nota": "Energia da CPU = potência do pacote lida pelo LibreHardwareMonitor (servidor web na porta 8085) menos o repouso; o TDP x utilização média só é usado se o sensor não estiver disponível. GPU = potência do nvidia-smi menos o repouso."
+  },
+  "economics": {
+    "target_vmaf": 93,
+    "currency": "BRL",
+    "cost_storage_per_gb_month": 0.2,
+    "cost_egress_per_gb": 0.65,
+    "cpu_instance_per_hour": 2.5,
+    "gpu_instance_per_hour": 8.0,
+    "energy_per_kwh": 0.85,
+    "catalog_hours": 1000,
+    "monthly_streamed_hours": 5000,
+    "sensitivity_streamed_hours": [
+      1000,
+      10000,
+      100000,
+      1000000,
+      10000000
+    ],
+    "fontes": {
+      "cost_storage_per_gb_month": "AWS S3 Standard (América do Sul sa-east-1 / US Standard média): R$ 0,20/GB-mês",
+      "cost_egress_per_gb": "Amazon CloudFront South America (Edge egress primeiros 10 TB): R$ 0,65/GB",
+      "cpu_instance_per_hour": "AWS EC2 c7a.2xlarge (8 vCPUs AMD EPYC 9004 on-demand): R$ 2,50/h",
+      "gpu_instance_per_hour": "AWS EC2 g6.xlarge (NVIDIA L4 24GB on-demand com NVENC AV1): R$ 8,00/h",
+      "energy_per_kwh": "Tarifa média homologada ANEEL (B1 Residencial / Comercial com tributos): R$ 0,85/kWh"
+    }
+  },
+  "output_dir": "output",
+  "rd_grid_nota": "Faixas de CRF calibradas para que todos os codificadores cubram VMAF ~88-99 (faixa de streaming/arquivamento) com sobreposição R-D >= 50%; a grade anterior (x264 18-38, SVT 22-52) não se sobrepunha."
+}

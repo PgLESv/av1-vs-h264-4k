@@ -1,0 +1,9 @@
+Amostra,Resolucao_FPS,Duracao_s,SI_Max,TI_Max,Complexidade,Fonte_Lossless,SHA256
+Amostra 1 (CityAlley),3840x2160@50,12.00,39.88,5.34,Baixo SI / Baixo TI (Vídeo Estático / Paisagem),Sim,030b4fd9c6fd6fd6e1977065993aa43824b4a27764c535785e1427241c2d69cc
+Amostra 2 (FlowerFocus),3840x2160@50,12.00,14.46,19.83,Médio SI / Médio TI (Movimento Moderado),Sim,61577f858d57769d62634a21f4266320ce45a99063c2e83df2bf4d47df6c2abc
+Amostra 3 (FlowerKids),3840x2160@50,12.00,40.74,27.04,Médio SI / Médio TI (Movimento Moderado),Sim,e18b451dff2582bf70f5b143e393391a5c28223e595fbf0a4eda947a53c40956
+Amostra 4 (FlowerPan),3840x2160@50,12.00,36.95,10.58,Baixo SI / Baixo TI (Vídeo Estático / Paisagem),Sim,ce7da73a2e73d13dc78a79a8944669ff2fb78f0f636c024bdc69556bb9538872
+Amostra 5 (RaceNight),3840x2160@50,12.00,40.05,41.40,Alto SI / Alto TI (Ação Dinâmica / Partículas),Sim,fb1a543ab8100f8dfca4e2bd670fa255416da8b55ca1f07331627d554c77c90c
+Amostra 6 (RiverBank),3840x2160@50,12.00,66.54,10.52,Médio SI / Médio TI (Movimento Moderado),Sim,575c16b795b57866d980ebd8bbda0d976435e9e503de3b1ea46de58b1197cf6e
+Amostra 7 (Twilight),3840x2160@50,12.00,36.19,15.31,Médio SI / Médio TI (Movimento Moderado),Sim,ba5eda3b947d69260296aced147ffdb26cceaf6b1fefa894914ba5a9e6c3e434
+Amostra 8 (CrowdRun),3840x2160@50,10.00,65.80,36.66,Alto SI / Alto TI (Ação Dinâmica / Partículas),Sim,6a6bb03cdf499000a4c79fb0a5cd8dce6fef11830d9467be6b06bf62dfb5e1eb

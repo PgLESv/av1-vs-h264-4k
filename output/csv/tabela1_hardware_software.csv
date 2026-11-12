@@ -1,0 +1,8 @@
+Categoria,Componente,Detalhes_Tecnicos
+Processador (CPU),"Modelo, nucleos, frequencia",AMD Ryzen 7 9800X3D 8-Core Processor (8C/16T @ 4.7 GHz base)
+Placa Grafica (GPU),"Modelo, VRAM, arquitetura NVENC","NVIDIA GeForce RTX 4070 SUPER (12 GB VRAM, NVENC 8ª Geração (Ada Lovelace com suporte AV1))"
+Memoria RAM,"Capacidade, tecnologia, frequencia",32 GB DDR5 @ 5600 MT/s (2 módulos)
+Armazenamento,Interface de disco,XrayDisk 1TB SSD (SATA); XPG GAMMIX S11 Pro (NVMe); XrayDisk 1TB SSD (SATA)
+Sistema Operacional,Versao e build,Microsoft Windows 11 Pro 64-bit (Build 26300)
+FFmpeg e Bibliotecas,Compilacao e versoes,"ffmpeg version 9.0.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers | x264: core 165 r3223, SVT-AV1: v4.2.0-72-gae2658e53, dav1d: 1.5.4-0-g54706fc6, libvmaf: v3.x (4991d2b5), xpsnr: Habilitado, FFVship: 5.1.0-a"
+Driver GPU,Controlador NVIDIA e CUDA,NVIDIA 621.01 (CUDA 13.5)

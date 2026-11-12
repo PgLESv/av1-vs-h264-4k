@@ -1,0 +1,6 @@
+Codificador,Dispositivo,Horas_Codificacao_por_Hora_Conteudo,Custo_Nuvem_Hora_Conteudo_BRL,Custo_Energia_Hora_Conteudo_BRL,Custo_Total_Acervo_1000h_BRL,Break_Even_Meses,Break_Even_Views_por_Conteudo
+h264,CPU,0.970,2.425,0.082,2425.19,0.00,0.0
+h264-veryslow,CPU,4.899,12.247,0.418,12247.05,2.75,14.6
+h264-nvenc,GPU,0.777,6.219,0.024,6218.96,2.24,11.9
+svt-av1,CPU,1.463,3.657,0.107,3657.43,0.10,0.6
+nvenc-av1,GPU,0.619,4.952,0.021,4951.80,0.37,2.0
