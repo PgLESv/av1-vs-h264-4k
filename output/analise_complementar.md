@@ -413,3 +413,24 @@ Desvio padrão e percentis do VMAF por quadro interpolados (PCHIP) no alvo e pro
 | 10.000.000 | H.264 NVENC p7 (GPU) | 42234237.73 | 3190284.66 | 0.001 |
 | 10.000.000 | AV1 SVT-AV1 P6 (CPU) | 23166119.99 | 22258402.40 | 0.000 |
 | 10.000.000 | AV1 NVENC p7 (GPU) | 32510555.81 | 12913966.57 | 0.000 |
+
+## 6. Distribuição híbrida (VMAF 93. 5.000 h assistidas/mês)
+
+### a) Cópia adicional mantida ao lado do acervo H.264
+
+| Cópia adicional | Armazenamento da cópia (R$/mês) | Economia de tráfego por hora assistida (R$) | Fração mínima de horas em dispositivos compatíveis |
+|---|---|---|---|
+| AV1 SVT-AV1 P6 (CPU) | 712.78 | 2.226 | 6.4% |
+| AV1 NVENC p7 (GPU) | 1000.29 | 1.291 | 15.5% |
+
+Fração mínima = armazenamento da cópia / (horas assistidas por mês x economia por hora). Não inclui o custo único de codificação da cópia.
+
+### b) Transcodificação sob demanda para H.264
+
+| Item | Valor |
+|---|---|
+| Armazenamento da cópia H.264 x264 medium (CPU) (R$/mês) | 1397.63 |
+| Custo de transcodificação por hora assistida, H.264 NVENC p7 (GPU) em nuvem (R$) | 6.219 |
+| Limite de horas assistidas/mês em dispositivos sem AV1 | 225 |
+
+Abaixo do limite, transcodificar sob demanda custa menos que manter a cópia H.264. Usa-se o H.264 NVENC p7 (GPU) porque o x264 medium não codifica 4K a 50 quadros/s em tempo real. Considera apenas o custo da instância em nuvem.
