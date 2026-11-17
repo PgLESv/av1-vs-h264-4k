@@ -8,6 +8,7 @@ Análises complementares usadas no texto do TCC e não geradas pelo run_pipeline
 4. Estabilidade temporal do VMAF por quadro (desvio padrão e percentis de 1% e 5%) em iso-qualidade.
 5. Coeficiente de variação do tempo de codificação entre as repetições.
 6. Sensibilidade da projeção econômica ao volume de horas assistidas.
+7. Distribuição híbrida: cópia adicional em AV1 e transcodificação sob demanda para H.264.
 
 Lê apenas output/resultados_completos.json e output/metrics/*_vmaf.json; não precisa dos vídeos.
 Uso: python analise_complementar.py [--output-dir output]
@@ -166,6 +167,43 @@ def main():
     md += [f"## 5. Sensibilidade ao volume de horas assistidas (VMAF {config['economics']['target_vmaf']})", "",
            table(["Horas assistidas/mês", "Codificador", "Custo mensal (R$)", "Economia mensal (R$)",
                   "Ponto de equilíbrio (meses)"], rows), ""]
+
+    # 7. Distribuição híbrida (dispositivos com e sem suporte ao AV1)
+    # a) Cópia adicional em AV1 mantida ao lado do acervo H.264: o custo extra é o armazenamento da cópia
+    #    AV1; a economia é a diferença de tráfego em cada hora assistida em AV1. A cópia compensa quando a
+    #    fração das horas assistidas em dispositivos compatíveis supera armazenamento / (horas * economia/h).
+    # b) Acervo só em AV1, transcodificado sob demanda para H.264 via NVENC (GPU em nuvem) para dispositivos
+    #    sem suporte: compensa enquanto o custo de transcodificação das horas assistidas nesses dispositivos
+    #    for menor que o custo de armazenar a cópia H.264. Considera-se apenas o custo da instância.
+    eco, econ_cfg = data["economics"], config["economics"]
+    streamed_h = econ_cfg["monthly_streamed_hours"]
+    rows = []
+    for c in keys:
+        if "av1" not in c or c not in eco:  # só cópias AV1; as variantes H.264 não exigem dispositivo novo
+            continue
+        saving_h = eco[baseline]["egress_cost_per_watched_hour"] - eco[c]["egress_cost_per_watched_hour"]
+        frac = eco[c]["storage_cost"] / (streamed_h * saving_h) if saving_h > 0 else None
+        rows.append([label(c), fmt(eco[c]["storage_cost"]), fmt(saving_h, "{:.3f}"),
+                     fmt(100 * frac, "{:.1f}%") if frac is not None else "n/d"])
+    md += [f"## 6. Distribuição híbrida (VMAF {econ_cfg['target_vmaf']}, {streamed_h:,} h assistidas/mês)".replace(",", "."), "",
+           "### a) Cópia adicional mantida ao lado do acervo H.264", "",
+           table(["Cópia adicional", "Armazenamento da cópia (R$/mês)", "Economia de tráfego por hora assistida (R$)",
+                  "Fração mínima de horas em dispositivos compatíveis"], rows), "",
+           "Fração mínima = armazenamento da cópia / (horas assistidas por mês x economia por hora). "
+           "Não inclui o custo único de codificação da cópia.", ""]
+    transc = "h264-nvenc"
+    if transc in eco:
+        cost_h = eco[transc]["encode_cost_cloud_per_content_hour"]
+        limit = eco[baseline]["storage_cost"] / cost_h
+        md += ["### b) Transcodificação sob demanda para H.264", "",
+               table(["Item", "Valor"], [
+                   [f"Armazenamento da cópia {label(baseline)} (R$/mês)", fmt(eco[baseline]["storage_cost"])],
+                   [f"Custo de transcodificação por hora assistida, {label(transc)} em nuvem (R$)", fmt(cost_h, "{:.3f}")],
+                   ["Limite de horas assistidas/mês em dispositivos sem AV1", fmt(limit, "{:.0f}")],
+               ]), "",
+               f"Abaixo do limite, transcodificar sob demanda custa menos que manter a cópia H.264. Usa-se o "
+               f"{label(transc)} porque o x264 medium não codifica 4K a 50 quadros/s em tempo real. "
+               "Considera apenas o custo da instância em nuvem.", ""]
 
     out = os.path.join(args.output_dir, "analise_complementar.md")
     with open(out, "w", encoding="utf-8") as f:
