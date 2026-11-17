@@ -414,7 +414,7 @@ Desvio padrão e percentis do VMAF por quadro interpolados (PCHIP) no alvo e pro
 | 10.000.000 | AV1 SVT-AV1 P6 (CPU) | 23166119.99 | 22258402.40 | 0.000 |
 | 10.000.000 | AV1 NVENC p7 (GPU) | 32510555.81 | 12913966.57 | 0.000 |
 
-## 6. Distribuição híbrida (VMAF 93. 5.000 h assistidas/mês)
+## 6. Distribuição híbrida (VMAF 93, 5.000 h assistidas/mês)
 
 ### a) Cópia adicional mantida ao lado do acervo H.264
 
